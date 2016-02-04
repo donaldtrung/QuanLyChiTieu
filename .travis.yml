@@ -5,4 +5,5 @@ install:
   - nuget install NUnit.Runners -Version 3.0.1 -OutputDirectory testrunner
 script:
   - xbuild /p:Configuration=Release /p:TargetFrameworkVersion="v4.5" MIB.sln
-  - mono ./testrunner/NUnit.Console.3.0.1/tools/nunit3-console.exe ./MIB.Test/MIB.Test.dll
+  -cd MIB.Test
+  - mono ../testrunner/NUnit.Console.3.0.1/tools/nunit3-console.exe ./bin/Nunit/MIB.Test.dll
