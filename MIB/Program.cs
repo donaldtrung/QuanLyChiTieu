@@ -17,7 +17,7 @@ namespace MIB
        // public static Add_Revenue add = new Add_Revenue();
        // public static Show_Revenue show = new Show_Revenue();
         //public Menux f = new Menux();
-        public static GlobalForm GF;
+        public static GlobalForm GFs;
         [STAThread]
         
         static void Main()
