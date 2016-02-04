@@ -63,6 +63,7 @@
     <Compile Include="Add Revenue.Designer.cs">
       <DependentUpon>Add Revenue.cs</DependentUpon>
     </Compile>
+    <Compile Include="CheckAddExpenditure.cs" />
     <Compile Include="CheckAddRevenue.cs" />
     <Compile Include="Data.cs" />
     <Compile Include="Menu.cs">
