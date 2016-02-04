@@ -26,7 +26,6 @@ namespace MIB
             Application.SetCompatibleTextRenderingDefault(false);
             GF = new GlobalForm();
             Application.Run(GF.MenuForm);
-            MessageBox.Show("Tet");
         }
     }    
 }
