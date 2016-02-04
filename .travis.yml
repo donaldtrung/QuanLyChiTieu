@@ -4,5 +4,5 @@ install:
   - nuget restore MIB.sln
   - nuget install NUnit.Runners -Version 3.0.1 -OutputDirectory testrunner
 script:
-  - xbuild /p:Configuration=Release MIB.sln
+  - xbuild /p:Configuration=Release /p:TargetFrameworkVersion="v4.5" MIB.sln
   - mono ./testrunner/NUnit.Console.3.0.1/tools/nunit3-console.exe ./MIB.Test/MIB.Test.dll
