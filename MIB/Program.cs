@@ -25,7 +25,8 @@ namespace MIB
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             GF = new GlobalForm();
-            Application.Run(GF.MenuFo
+            Application.Run(GF.MenuForm);
+
         }
     }    
 }
