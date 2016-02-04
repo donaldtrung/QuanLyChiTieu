@@ -25,8 +25,7 @@ namespace MIB
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             GF = new GlobalForm();
-            Application.Run(GF.MenuForm);
-            MessageBox.Show("Lam Sao Day");
+            Application.Run(GF.MenuFo
         }
     }    
 }
