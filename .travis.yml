@@ -1,5 +1,5 @@
 
-language: csharp
+language: objective-c
 solution: MIB.sln
 install:
   - nuget restore solution-name.sln
