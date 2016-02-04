@@ -3,7 +3,7 @@ language: csharp
 solution: MIB.sln
 install:
   - nuget restore MIB.sln
-  - nuget install NUnit.Runners -Version 3.0.8 -OutputDirectory testrunner
+  - nuget install NUnit.Runners -Version 3.0.1 -OutputDirectory testrunner
 script:
   - xbuild /p:Configuration=Release MIB.sln
-  - mono ./testrunner/NUnit.Runners.3.0.8/tools/nunit-console.exe ./MIB/bin/Release/MIB.dll
+  - mono ./testrunner/NUnit.Runners.3.0.1/tools/nunit-console.exe ./MIB/bin/Release/MIB.dll
