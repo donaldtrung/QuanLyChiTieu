@@ -1,8 +1,10 @@
 language: csharp
-solution: MIB.sln
+solution: ./src/MIB.sln
+
 install:
-  - nuget restore MIB.sln
-  - nuget install NUnit.Runners -Version 3.0.1 -OutputDirectory testrunner
+  - sudo apt-get install nunit-console
+  - nuget restore ./src/MIB.sln
+
 script:
-  - xbuild /p:Configuration=Release solution-name.sln
-  - mono ./testrunner/NUnit.Runners.3.0.1/tools/nunit-console.exe ./MIB.Tests/bin/Release/MIB.dll
+  - xbuild ./src/yoursolution.sln
+  - nunit-console ./src/MIB/bin/Debug/MIB.dll
