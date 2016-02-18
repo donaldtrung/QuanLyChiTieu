@@ -117,6 +117,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "Add_Revenue";
             this.Text = "Add Revenue";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Add_Revenue_FormClosing);
             this.ResumeLayout(false);
             this.PerformLayout();
 

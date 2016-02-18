@@ -108,6 +108,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "Show_Expenditure";
             this.Text = "Show Expenditure";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Show_Expenditure_FormClosing);
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -16,6 +16,8 @@ namespace MIB
         {
             InitializeComponent();
             Menux.MW.Statistic();
+            this.ControlBox = false;
+
             Statistics_func(Menux.MW.sum_rev,Menux.MW.sum_exp,Menux.MW.balance);
         }
         private void Statistics_func(double sum_rev, double sum_exp, double balance)
@@ -31,6 +33,11 @@ namespace MIB
             Program.GF.MenuForm.SetBounds(this.Location.X, this.Location.Y, this.Width, this.Height);
 
             this.Close();
+        }
+
+        private void Statistics_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            //Program.GF.MenuForm.Close();
         }
     }
 }

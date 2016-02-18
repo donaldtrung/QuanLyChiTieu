@@ -6,15 +6,14 @@ using System.Threading.Tasks;
 using NUnit.Framework;
 using System.IO;
 
-namespace MIB
+namespace Project.Test
 {
     [TestFixture]
     class Test_I_O_txt_File
     {
-
-        public MyWallet TestWallet = new MyWallet();
+        public MIB.MyWallet TestWallet = new MIB.MyWallet();
         string startupPath = "";
-       [SetUp]
+        [SetUp]
         public void SetUp()
         {
             startupPath = System.AppDomain.CurrentDomain.BaseDirectory + TestWallet.file_input;
@@ -47,7 +46,7 @@ namespace MIB
         [Test]
         public void CompareReadAndWriteData()
         {
-            List<DataType> tmpData = new List<DataType>();
+            List<MIB.DataType> tmpData = new List<MIB.DataType>();
             tmpData = TestWallet.data;
             TestWallet.Write(TestWallet.data, startupPath);
             TestWallet.data.Clear();

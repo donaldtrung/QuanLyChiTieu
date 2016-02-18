@@ -21,7 +21,8 @@ namespace MIB
         {
             InitializeComponent();
             InitCombobox();
-            
+            this.ControlBox = false;
+
             MW.Read(MW.data, MW.file_input);
         }
 

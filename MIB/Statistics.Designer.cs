@@ -151,6 +151,7 @@
             this.Controls.Add(this.tb_revenue);
             this.Name = "Statistics";
             this.Text = "Statistics";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Statistics_FormClosing);
             this.ResumeLayout(false);
             this.PerformLayout();
 

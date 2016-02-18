@@ -159,23 +159,23 @@ namespace MIB
             {
                 case "VND":
                     return money;
-                    break;
+                    
 
                 case "thousand VND":
                     return money * 1000;
-                    break;
+                    
 
                 case "hundred thousand VND":
                     return money * 100000;
-                    break;
+                    
 
                 case "million VND":
                     return money * 1000000;
-                    break;
+                    
 
                 case "billion VND":
                     return money * 1000000000;
-                    break;                                       
+                                                           
             }
 
             return 0;

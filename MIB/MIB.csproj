@@ -63,8 +63,6 @@
     <Compile Include="Add Revenue.Designer.cs">
       <DependentUpon>Add Revenue.cs</DependentUpon>
     </Compile>
-    <Compile Include="CheckAddExpenditure.cs" />
-    <Compile Include="CheckAddRevenue.cs" />
     <Compile Include="Data.cs" />
     <Compile Include="Menu.cs">
       <SubType>Form</SubType>
@@ -92,9 +90,6 @@
     <Compile Include="Statistics.Designer.cs">
       <DependentUpon>Statistics.cs</DependentUpon>
     </Compile>
-    <Compile Include="TestDeafault.cs" />
-    <Compile Include="TestSum_Revenue_Expenditure.cs" />
-    <Compile Include="Test_I_O_txt_File.cs" />
     <EmbeddedResource Include="Add Expenditure.resx">
       <DependentUpon>Add Expenditure.cs</DependentUpon>
     </EmbeddedResource>

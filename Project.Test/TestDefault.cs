@@ -4,32 +4,33 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using NUnit.Framework;
-using System.Reflection;
 
-namespace MIB
+namespace Project.Test
 {
     [TestFixture]
-    class TestDeafault
+    public class TestDefault
     {
+        
         [Test]
         public void CheckMonthDefault()
         {
             String scurMonth = DateTime.Now.Month.ToString();
             scurMonth = "0" + scurMonth;
             //String sMonth = curMonth.ToString();
-            Menux tmpForm = new Menux();
+            MIB.Menux tmpForm = new MIB.Menux();
             Assert.AreEqual(scurMonth, tmpForm.GetCBBMonth().Items[tmpForm.GetCBBMonth().SelectedIndex]);
         }
 
         [Test]
         public void CheckYearDefault()
         {
-            
+
             String scurYear = DateTime.Now.Year.ToString();
             //scurMonth = "0" + scurMonth;
             //String sMonth = curMonth.ToString();
-            Menux tmpForm = new Menux();            
-           Assert.AreEqual(scurYear, tmpForm.GetCBBYear().Items[tmpForm.GetCBBYear().SelectedIndex]);
+            MIB.Menux tmpForm = new MIB.Menux();
+            Assert.AreEqual(scurYear, tmpForm.GetCBBYear().Items[tmpForm.GetCBBYear().SelectedIndex]);
         }
     }
 }
+

@@ -5,104 +5,102 @@ using System.Text;
 using System.Threading.Tasks;
 using NUnit.Framework;
 
-namespace MIB
+namespace Project.Test
 {
     [TestFixture]
-    class CheckAddExpenditure
+    public class CheckAddRevenue
     {
-        public MyWallet TestWallet = new MyWallet();
-        string startupPath = "";
+        public MIB.MyWallet TestWallet = new MIB.MyWallet();
 
         [SetUp]
         public void SetUp()
         {
-            startupPath = System.AppDomain.CurrentDomain.BaseDirectory + TestWallet.file_input;
+            string startupPath = System.AppDomain.CurrentDomain.BaseDirectory + TestWallet.file_input;
             TestWallet.Read(TestWallet.data, startupPath);
         }
         [Test]
-        public void Add5_thousand_VND_Expenditure()
+        public void Add3kVNDRevenue()
         {
-            DataType tmpData = new DataType();
-            tmpData.type = "expenditure";
+            MIB.DataType tmpData = new MIB.DataType();
+            tmpData.type = "revenue";
             if (DateTime.Now.Month >= 10)
                 tmpData.date.month = DateTime.Now.Month.ToString();
             else
                 tmpData.date.month = "0" + DateTime.Now.Month.ToString();
             tmpData.time = DateTime.Now.ToString("dd/MM/yyyy HH:mm:ss");
-            tmpData.money = "5";
+            tmpData.money = "3";
             tmpData.unit = "thousand VND";
-            tmpData.describe = "uong cafee";
+            tmpData.describe = "cafee";
             TestWallet.Add(tmpData);
             Assert.AreEqual(tmpData, TestWallet.data[TestWallet.data.Count() - 1]);
         }
 
         [Test]
-        public void Add9000VNDExpenditure()
+        public void Add4000VNDRevenue()
         {
-            DataType tmpData = new DataType();
-            tmpData.type = "expenditure";
+            MIB.DataType tmpData = new MIB.DataType();
+            tmpData.type = "revenue";
             if (DateTime.Now.Month >= 10)
                 tmpData.date.month = DateTime.Now.Month.ToString();
             else
                 tmpData.date.month = "0" + DateTime.Now.Month.ToString();
             tmpData.time = DateTime.Now.ToString("dd/MM/yyyy HH:mm:ss");
-            tmpData.money = "9000";
+            tmpData.money = "4000";
             tmpData.unit = "VND";
-            tmpData.describe = "mua chim hoa\nqua";
+            tmpData.describe = "ban hoa\nqua";
             TestWallet.Add(tmpData);
             Assert.AreEqual(tmpData, TestWallet.data[TestWallet.data.Count() - 1]);
         }
 
         [Test]
-        public void Add7_Hundred_Thousand_VND_Expenditure()
+        public void Add4_Hundred_Thousand_VNDRevenue()
         {
-            DataType tmpData = new DataType();
-            tmpData.type = "expenditure";
+            MIB.DataType tmpData = new MIB.DataType();
+            tmpData.type = "revenue";
             if (DateTime.Now.Month >= 10)
                 tmpData.date.month = DateTime.Now.Month.ToString();
             else
                 tmpData.date.month = "0" + DateTime.Now.Month.ToString();
             tmpData.time = DateTime.Now.ToString("dd/MM/yyyy HH:mm:ss");
-            tmpData.money = "7";
+            tmpData.money = "4";
             tmpData.unit = "hundred thousand VND";
-            tmpData.describe = "mua ca chim";
+            tmpData.describe = "ban chim";
             TestWallet.Add(tmpData);
             Assert.AreEqual(tmpData, TestWallet.data[TestWallet.data.Count() - 1]);
         }
 
         [Test]
-        public void Add30_Milion_VND_Expenditure()
+        public void Add50_Milion_VNDRevenue()
         {
-            DataType tmpData = new DataType();
-            tmpData.type = "expenditure";
+            MIB.DataType tmpData = new MIB.DataType();
+            tmpData.type = "revenue";
             if (DateTime.Now.Month >= 10)
                 tmpData.date.month = DateTime.Now.Month.ToString();
             else
                 tmpData.date.month = "0" + DateTime.Now.Month.ToString();
             tmpData.time = DateTime.Now.ToString("dd/MM/yyyy HH:mm:ss");
-            tmpData.money = "30";
+            tmpData.money = "50";
             tmpData.unit = "milion thousand VND";
-            tmpData.describe = "mua xe ex";
+            tmpData.describe = "bán gỗ hương";
             TestWallet.Add(tmpData);
             Assert.AreEqual(tmpData, TestWallet.data[TestWallet.data.Count() - 1]);
         }
 
         [Test]
-        public void Add5_Bilion_VNDexpenditure()
+        public void Add6_Bilion_VNDRevenue()
         {
-            DataType tmpData = new DataType();
-            tmpData.type = "expenditure";
+            MIB.DataType tmpData = new MIB.DataType();
+            tmpData.type = "revenue";
             if (DateTime.Now.Month >= 10)
                 tmpData.date.month = DateTime.Now.Month.ToString();
             else
                 tmpData.date.month = "0" + DateTime.Now.Month.ToString();
             tmpData.time = DateTime.Now.ToString("dd/MM/yyyy HH:mm:ss");
-            tmpData.money = "5";
+            tmpData.money = "6";
             tmpData.unit = "bilion thousand VND";
-            tmpData.describe = "mua may bay";
+            tmpData.describe = "bán nhà nguyễn kim";
             TestWallet.Add(tmpData);
             Assert.AreEqual(tmpData, TestWallet.data[TestWallet.data.Count() - 1]);
         }
     }
 }
-

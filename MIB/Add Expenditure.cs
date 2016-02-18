@@ -15,7 +15,8 @@ namespace MIB
         public Add_Expenditure()
         {
             InitializeComponent();
-            InitCombobox();  
+            InitCombobox();
+            this.ControlBox = false;
         }
 
         private void btn_add_Click(object sender, EventArgs e)
@@ -39,9 +40,9 @@ namespace MIB
             Program.GF.MenuForm.Show();
             Program.GF.MenuForm.SetBounds(this.Location.X, this.Location.Y, this.Width, this.Height);
 
-            this.Hide();
+            this.Close();
         }
-
+        
        private void tb_money_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (!CheckInputValue(e))
@@ -104,5 +105,6 @@ namespace MIB
 
             return false;
         }
+
     }
 }
