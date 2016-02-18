@@ -16,9 +16,11 @@ namespace MIB
         {
             InitializeComponent();
             InitForm();
+            this.ControlBox = false;
 
             double sum = 0.0;
-            textBox1.Text = Menux.MW.GetStringData("revenue",ref sum);
+            dataGridView.DataSource = "dsadsa";
+            //textBox1.Text = Menux.MW.GetStringData("revenue",ref sum);
             tb_sum.Text = Menux.MW.ConvertMoney(sum);
         }
 
@@ -32,6 +34,6 @@ namespace MIB
         private void InitForm()
         {
             lb_date.Text = Menux.MW.date.month + "/" + Menux.MW.date.year;
-        }       
+        }
     }
 }

@@ -16,6 +16,7 @@ namespace MIB
         {
             InitializeComponent();
             InitForm();
+            this.ControlBox = false;
 
             double sum = 0.0;
             textBox1.Text = Menux.MW.GetStringData("expenditure", ref sum);

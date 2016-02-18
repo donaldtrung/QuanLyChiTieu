@@ -6,14 +6,13 @@ using System.Threading.Tasks;
 using System.Linq;
 using System.Text;
 using System.IO;
+using System.Xml;
 
 namespace MIB
 {
     public class GlobalForm
     {
         public Menux MenuForm = new Menux();
-        //public Add_Revenue AddRevenueForm = new Add_Revenue();
-        //public Show_Revenue ShowRevenueForm = new Show_Revenue();
     }
     public class DataType
     {
@@ -27,100 +26,71 @@ namespace MIB
     public class MyWallet
     {
         public double sum_rev = 0.0, sum_exp = 0.0, balance;
-        public string file_input = "data.txt";
+        public string file_input = "data.xml";
         public Date date = new Date();
         public List<DataType> data = new List<DataType>();
         public void Read(List<DataType> data, string file_input)
         {
             if (File.Exists(file_input))
             {
-                StreamReader re = File.OpenText(file_input);
-                string input;
-                while ((input = re.ReadLine()) != null)
+                XmlDocument doc = new XmlDocument();
+                doc.Load(file_input);
+
+                XmlNodeList list_type = doc.GetElementsByTagName("type");
+                XmlNodeList list_month = doc.GetElementsByTagName("month");
+                XmlNodeList list_year = doc.GetElementsByTagName("year");
+                XmlNodeList list_time = doc.GetElementsByTagName("time");
+                XmlNodeList list_money = doc.GetElementsByTagName("money");
+                XmlNodeList list_unit = doc.GetElementsByTagName("unit");
+                XmlNodeList list_describe = doc.GetElementsByTagName("describe");
+
+                for (int i = 0; i < list_type.Count; i++)
                 {
                     DataType tmp = new DataType();
+                    tmp.type = list_type[i].InnerText;
+                    tmp.date.month = list_month[i].InnerText;
+                    tmp.date.year = list_year[i].InnerText;
+                    tmp.time = list_time[i].InnerText;
+                    tmp.money = list_money[i].InnerText;
+                    tmp.unit = list_unit[i].InnerText;
+                    tmp.describe = list_describe[i].InnerText;
 
-                    tmp.type = input;
-
-                    input = re.ReadLine();
-                    tmp.date.month = input;
-
-                    input = re.ReadLine();
-                    tmp.date.year = input;
-
-                    input = re.ReadLine();
-                    tmp.time = input;
-
-                    input = re.ReadLine();
-                    tmp.money = input;
-
-                    input = re.ReadLine();
-                    tmp.unit = input;
-
-                    string input2;
-                    input = re.ReadLine();  
-                    while(true)
-                    {                              
-                        if (input != "END")
-                        {
-                            input2 = re.ReadLine();
-                            if (input2 != "END")
-                                tmp.describe = tmp.describe + input + "\r\n";
-                            else
-                            {
-                                tmp.describe = tmp.describe + input;
-                                break;
-                            }
-                            input = input2;
-                        }
-                    }
                     data.Add(tmp);
                 }
-
-                re.Close();
             }
         }
         public void Write(List<DataType> data, string file_input)
         {
-            if (File.Exists(file_input))
+            if (!File.Exists(file_input))
             {
-                FileInfo fi = new FileInfo(file_input);
-                if (fi.IsReadOnly)
-                    fi.IsReadOnly = false;
-                fi.Delete();
+                File.Create(file_input).Close();
             }
 
-            FileStream myFileSV = new FileStream(file_input, FileMode.Create);
-            StreamWriter wr = new StreamWriter(myFileSV, Encoding.UTF8);
+            FileStream fs = new FileStream(file_input, FileMode.Create);
+            
+            XmlTextWriter w = new XmlTextWriter(fs, Encoding.UTF8);
+            w.Formatting = Formatting.Indented;
+            w.WriteStartDocument();
+            w.WriteStartElement("QLCT");
 
             for (int i = 0; i < data.Count(); i++)
             {
-                wr.WriteLine(data[i].type);
-                wr.Flush();
+                w.WriteStartElement("QLCT");
 
-                wr.WriteLine(data[i].date.month);
-                wr.Flush();
+                w.WriteElementString("type", data[i].type);
+                w.WriteElementString("month", data[i].date.month);
+                w.WriteElementString("year", data[i].date.year);
+                w.WriteElementString("time", data[i].time);
+                w.WriteElementString("money", data[i].money);
+                w.WriteElementString("unit", data[i].unit);
+                w.WriteElementString("describe", data[i].describe);
 
-                wr.WriteLine(data[i].date.year);
-                wr.Flush();
-                                
-                wr.WriteLine(data[i].time);
-                wr.Flush();
-
-                wr.WriteLine(data[i].money);
-                wr.Flush();
-
-                wr.WriteLine(data[i].unit);
-                wr.Flush();
-
-                wr.WriteLine(data[i].describe);
-                wr.Flush();
-
-                wr.WriteLine("END");
-                wr.Flush();
+                w.WriteEndElement();
             }
-            wr.Close();
-            myFileSV.Close();
+
+            w.WriteEndDocument();
+            w.Flush();
+            fs.Close();
         }
 
         public void Add(DataType tmp)
