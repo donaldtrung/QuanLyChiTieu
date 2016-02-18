@@ -19,8 +19,10 @@ namespace MIB
             this.ControlBox = false;
 
             double sum = 0.0;
-            dataGridView.DataSource = "dsadsa";
+            //dataGridView.DataSource = "dsadsa";
+            //textBox1.Text = Menux.MW.GetStringData("revenue", ref sum);
             //textBox1.Text = Menux.MW.GetStringData("revenue",ref sum);
+            dataGridView.DataSource = Menux.MW.GetStringData("revenue", ref sum);
             tb_sum.Text = Menux.MW.ConvertMoney(sum);
         }
 

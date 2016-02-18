@@ -19,7 +19,7 @@ namespace MIB
             this.ControlBox = false;
 
             double sum = 0.0;
-            textBox1.Text = Menux.MW.GetStringData("expenditure", ref sum);
+           // textBox1.Text = Menux.MW.GetStringData("expenditure", ref sum);
             tb_sum.Text = Menux.MW.ConvertMoney(sum);
         }
         private void btn_back_Click(object sender, EventArgs e)

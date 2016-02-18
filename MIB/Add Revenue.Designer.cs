@@ -98,9 +98,9 @@
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(12, 116);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(47, 13);
+            this.label2.Size = new System.Drawing.Size(63, 13);
             this.label2.TabIndex = 6;
-            this.label2.Text = "Decribe:";
+            this.label2.Text = "Description:";
             // 
             // Add_Revenue
             // 

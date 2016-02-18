@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.IO;
 using System.Xml;
+using System.Data;
 
 namespace MIB
 {
@@ -97,18 +98,36 @@ namespace MIB
         {
             data.Add(tmp);
         }
-        public string GetStringData(string type, ref double sum)
+        public DataTable GetStringData(string type, ref double sum)
         {
-            string text = null;
+            double money;
+            DataTable tb = new DataTable();
+        
+            tb.Columns.Add("Time", typeof(string));
+            tb.Columns.Add("Money", typeof(string));
+            tb.Columns.Add("Describe", typeof(string));
+            //string text = null;
             for (int i = data.Count(); i > 0; i--)
              {
                  if (data[i - 1].type == type && data[i - 1].date.month == date.month && data[i - 1].date.year == date.year)
                  {
-                     text = text + data[i - 1].time + "\r\n" + data[i - 1].money + " " + data[i - 1].unit + "\r\n" + data[i - 1].describe + "\r\n\r\n";
-                     sum += CalMoney(data[i - 1].unit, Int32.Parse(data[i - 1].money));
+                     //tb.Rows.Add(data[i - 1].time, data[i - 1].money, data[i - 1].describe);
+                     DataRow newRow = tb.NewRow();
+
+                     newRow["Time"] = data[i - 1].time; // remove this line
+                     money = CalMoney(data[i - 1].unit, double.Parse(data[i - 1].money));
+                     newRow["Money"] = money + " VNĐ";
+                     newRow["Describe"] = data[i - 1].describe;
+                     tb.Rows.Add(newRow);
+
+                     sum += money;
                  }
+                 //{
+                 //    text = text + data[i - 1].time + "\r\n" + data[i - 1].money + " " + data[i - 1].unit + "\r\n" + data[i - 1].describe + "\r\n\r\n";
+                 //    sum += CalMoney(data[i - 1].unit, Int32.Parse(data[i - 1].money));
+                 //}
              }
-             return text;
+             return tb;
         }
         public string ConvertMoney(double money)
         {

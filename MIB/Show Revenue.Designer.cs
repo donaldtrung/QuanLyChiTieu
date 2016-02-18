@@ -28,16 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.btn_back = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.tb_sum = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.lb_date = new System.Windows.Forms.Label();
             this.dataGridView = new System.Windows.Forms.DataGridView();
-            this.cl_time = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cl_money = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cl_describe = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
             this.SuspendLayout();
             // 
@@ -90,49 +86,16 @@
             // 
             // dataGridView
             // 
-            this.dataGridView.AllowUserToResizeColumns = false;
-            this.dataGridView.AllowUserToResizeRows = false;
+            this.dataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells;
+            this.dataGridView.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllHeaders;
             this.dataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.cl_time,
-            this.cl_money,
-            this.cl_describe});
-            this.dataGridView.Location = new System.Drawing.Point(15, 46);
+            this.dataGridView.Location = new System.Drawing.Point(15, 39);
             this.dataGridView.MultiSelect = false;
             this.dataGridView.Name = "dataGridView";
             this.dataGridView.ReadOnly = true;
-            this.dataGridView.RowHeadersWidth = 30;
-            this.dataGridView.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            this.dataGridView.Size = new System.Drawing.Size(373, 218);
+            this.dataGridView.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
+            this.dataGridView.Size = new System.Drawing.Size(373, 225);
             this.dataGridView.TabIndex = 10;
-            // 
-            // cl_time
-            // 
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopRight;
-            this.cl_time.DefaultCellStyle = dataGridViewCellStyle1;
-            this.cl_time.Frozen = true;
-            this.cl_time.HeaderText = "Time";
-            this.cl_time.Name = "cl_time";
-            this.cl_time.ReadOnly = true;
-            this.cl_time.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            // 
-            // cl_money
-            // 
-            this.cl_money.Frozen = true;
-            this.cl_money.HeaderText = "Money";
-            this.cl_money.Name = "cl_money";
-            this.cl_money.ReadOnly = true;
-            this.cl_money.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.cl_money.Width = 120;
-            // 
-            // cl_describe
-            // 
-            this.cl_describe.Frozen = true;
-            this.cl_describe.HeaderText = "Describe";
-            this.cl_describe.Name = "cl_describe";
-            this.cl_describe.ReadOnly = true;
-            this.cl_describe.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.cl_describe.Width = 121;
             // 
             // Show_Revenue
             // 
@@ -162,8 +125,5 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label lb_date;
         private System.Windows.Forms.DataGridView dataGridView;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cl_time;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cl_money;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cl_describe;
     }
 }
