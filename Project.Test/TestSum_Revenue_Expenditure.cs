@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using NUnit.Framework;
 
-namespace MIB
+namespace Project.Test
 {
     //this unit test test sum of revenue, expenditure and calbalance
     //in month and year have been given
@@ -13,7 +13,7 @@ namespace MIB
     [TestFixture]
     class TestSum_Revenue_Expenditure
     {
-        public MyWallet TestWallet = new MyWallet();
+        public MIB.MyWallet TestWallet = new MIB.MyWallet();
         string startupPath = "";
         double sumrev;
         double sumex;

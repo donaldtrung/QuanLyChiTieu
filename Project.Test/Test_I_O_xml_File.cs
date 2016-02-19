@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,13 +6,13 @@ using System.Threading.Tasks;
 using NUnit.Framework;
 using System.IO;
 
-namespace MIB
+namespace Project.Test
 {
     [TestFixture]
-    class Test_I_O_txt_File
+    class Test_I_O_xml_File
     {
 
-        public MyWallet TestWallet = new MyWallet();
+        public MIB.MyWallet TestWallet = new MIB.MyWallet();
         string startupPath = "";
        [SetUp]
         public void SetUp()
@@ -47,7 +47,7 @@ namespace MIB
         [Test]
         public void CompareReadAndWriteData()
         {
-            List<DataType> tmpData = new List<DataType>();
+            List<MIB.DataType> tmpData = new List<MIB.DataType>();
             tmpData = TestWallet.data;
             TestWallet.Write(TestWallet.data, startupPath);
             TestWallet.data.Clear();

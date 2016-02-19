@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using NUnit.Framework;
 using System.Reflection;
 
-namespace MIB
+namespace Project.Test
 {
     [TestFixture]
     class TestDeafault
@@ -17,7 +17,7 @@ namespace MIB
             String scurMonth = DateTime.Now.Month.ToString();
             scurMonth = "0" + scurMonth;
             //String sMonth = curMonth.ToString();
-            Menux tmpForm = new Menux();
+            MIB.Menux tmpForm = new MIB.Menux();
             Assert.AreEqual(scurMonth, tmpForm.GetCBBMonth().Items[tmpForm.GetCBBMonth().SelectedIndex]);
         }
 
@@ -28,7 +28,7 @@ namespace MIB
             String scurYear = DateTime.Now.Year.ToString();
             //scurMonth = "0" + scurMonth;
             //String sMonth = curMonth.ToString();
-            Menux tmpForm = new Menux();            
+            MIB.Menux tmpForm = new MIB.Menux();            
            Assert.AreEqual(scurYear, tmpForm.GetCBBYear().Items[tmpForm.GetCBBYear().SelectedIndex]);
         }
     }
