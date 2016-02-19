@@ -15,10 +15,15 @@ namespace MIB
         public Statistics()
         {
             InitializeComponent();
-            Menux.MW.Statistic();
+
+            double sum_rev = 0, sum_exp = 0, balance;
+            Menux.MW.GetStringData("revenue", ref sum_rev);
+            Menux.MW.GetStringData("expenditure", ref sum_exp);
+            balance = sum_rev - sum_exp;
+
             this.ControlBox = false;
 
-            Statistics_func(Menux.MW.sum_rev,Menux.MW.sum_exp,Menux.MW.balance);
+            Statistics_func(sum_rev, sum_exp, balance);
         }
         private void Statistics_func(double sum_rev, double sum_exp, double balance)
         { 

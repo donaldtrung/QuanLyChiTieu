@@ -19,8 +19,15 @@ namespace MIB
             this.ControlBox = false;
 
             double sum = 0.0;
-           // textBox1.Text = Menux.MW.GetStringData("expenditure", ref sum);
+
+            dataGridView.DataSource = Menux.MW.GetStringData("expenditure", ref sum);
             tb_sum.Text = Menux.MW.ConvertMoney(sum);
+
+            if (dataGridView.RowCount == 0)
+            {
+                btn_delete.Enabled = false;
+                btn_change.Enabled = false;
+            }
         }
         private void btn_back_Click(object sender, EventArgs e)
         {
@@ -32,6 +39,29 @@ namespace MIB
         private void InitForm()
         {
             lb_date.Text = Menux.MW.date.month + "/" + Menux.MW.date.year;
+        }
+
+        private void btn_change_Click(object sender, EventArgs e)
+        {
+            string time = dataGridView.SelectedRows[0].Cells[0].Value.ToString();
+            Change ch = new Change(time);
+
+            ch.Show();
+        }
+
+        private void btn_delete_Click(object sender, EventArgs e)
+        {
+            DialogResult result = MessageBox.Show("Do you want to delete this row !!", "Warning", MessageBoxButtons.YesNo);
+
+            if (result == DialogResult.Yes)
+            {
+                MessageBox.Show("Deleted successfully!!", "Result", MessageBoxButtons.OK);
+
+                string time = dataGridView.SelectedRows[0].Cells[0].Value.ToString();
+                Menux.MW.DeleteRow(time);
+            }
+
+            Menux.MW.Write(Menux.MW.file_input);
         }
     }
 }

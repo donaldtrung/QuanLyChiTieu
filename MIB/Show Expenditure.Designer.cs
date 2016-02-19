@@ -28,24 +28,16 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.textBox1 = new System.Windows.Forms.TextBox();
             this.btn_back = new System.Windows.Forms.Button();
             this.tb_sum = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.dataGridView = new System.Windows.Forms.DataGridView();
             this.lb_date = new System.Windows.Forms.Label();
+            this.btn_delete = new System.Windows.Forms.Button();
+            this.btn_change = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
             this.SuspendLayout();
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(24, 22);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.ReadOnly = true;
-            this.textBox1.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.textBox1.Size = new System.Drawing.Size(266, 247);
-            this.textBox1.TabIndex = 0;
-            this.textBox1.WordWrap = false;
             // 
             // btn_back
             // 
@@ -84,30 +76,69 @@
             this.label2.TabIndex = 7;
             this.label2.Text = "VND";
             // 
+            // dataGridView
+            // 
+            this.dataGridView.AllowUserToAddRows = false;
+            this.dataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells;
+            this.dataGridView.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCellsExceptHeaders;
+            this.dataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView.Location = new System.Drawing.Point(12, 36);
+            this.dataGridView.MultiSelect = false;
+            this.dataGridView.Name = "dataGridView";
+            this.dataGridView.ReadOnly = true;
+            this.dataGridView.RowHeadersVisible = false;
+            this.dataGridView.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
+            this.dataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridView.Size = new System.Drawing.Size(373, 204);
+            this.dataGridView.TabIndex = 11;
+            // 
             // lb_date
             // 
             this.lb_date.AutoSize = true;
             this.lb_date.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lb_date.Location = new System.Drawing.Point(306, 25);
+            this.lb_date.Location = new System.Drawing.Point(176, 9);
             this.lb_date.Name = "lb_date";
             this.lb_date.Size = new System.Drawing.Size(66, 24);
-            this.lb_date.TabIndex = 8;
+            this.lb_date.TabIndex = 12;
             this.lb_date.Text = "label3";
+            // 
+            // btn_delete
+            // 
+            this.btn_delete.Location = new System.Drawing.Point(84, 246);
+            this.btn_delete.Name = "btn_delete";
+            this.btn_delete.Size = new System.Drawing.Size(66, 26);
+            this.btn_delete.TabIndex = 14;
+            this.btn_delete.Text = "Delete";
+            this.btn_delete.UseVisualStyleBackColor = true;
+            this.btn_delete.Click += new System.EventHandler(this.btn_delete_Click);
+            // 
+            // btn_change
+            // 
+            this.btn_change.Location = new System.Drawing.Point(12, 246);
+            this.btn_change.Name = "btn_change";
+            this.btn_change.Size = new System.Drawing.Size(66, 26);
+            this.btn_change.TabIndex = 15;
+            this.btn_change.Text = "Change";
+            this.btn_change.UseVisualStyleBackColor = true;
+            this.btn_change.Click += new System.EventHandler(this.btn_change_Click);
             // 
             // Show_Expenditure
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(400, 331);
+            this.Controls.Add(this.btn_change);
+            this.Controls.Add(this.btn_delete);
             this.Controls.Add(this.lb_date);
+            this.Controls.Add(this.dataGridView);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.tb_sum);
             this.Controls.Add(this.btn_back);
-            this.Controls.Add(this.textBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "Show_Expenditure";
             this.Text = "Show Expenditure";
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -115,11 +146,13 @@
 
         #endregion
 
-        private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Button btn_back;
         private System.Windows.Forms.TextBox tb_sum;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.DataGridView dataGridView;
         private System.Windows.Forms.Label lb_date;
+        private System.Windows.Forms.Button btn_delete;
+        private System.Windows.Forms.Button btn_change;
     }
 }

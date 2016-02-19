@@ -25,7 +25,7 @@ namespace MIB
             {
                 DataType tmp = GetDataFromTextbox();
                 Menux.MW.Add(tmp);
-                Menux.MW.Write(Menux.MW.data, Menux.MW.file_input);
+                Menux.MW.Write(Menux.MW.file_input);
                 MessageBox.Show("Add Revenue Success", "Result");
                 InitTextbox();                
             }

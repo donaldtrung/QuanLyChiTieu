@@ -26,11 +26,10 @@ namespace MIB
     }
     public class MyWallet
     {
-        public double sum_rev = 0.0, sum_exp = 0.0, balance;
         public string file_input = "data.xml";
         public Date date = new Date();
         public List<DataType> data = new List<DataType>();
-        public void Read(List<DataType> data, string file_input)
+        public void Read(string file_input)
         {
             if (File.Exists(file_input))
             {
@@ -60,7 +59,7 @@ namespace MIB
                 }
             }
         }
-        public void Write(List<DataType> data, string file_input)
+        public void Write(string file_input)
         {
             if (!File.Exists(file_input))
             {
@@ -116,7 +115,7 @@ namespace MIB
 
                      newRow["Time"] = data[i - 1].time; // remove this line
                      money = CalMoney(data[i - 1].unit, double.Parse(data[i - 1].money));
-                     newRow["Money"] = money + " VNĐ";
+                     newRow["Money"] = ConvertMoney(money) + " VNĐ";
                      newRow["Describe"] = data[i - 1].describe;
                      tb.Rows.Add(newRow);
 
@@ -170,13 +169,41 @@ namespace MIB
             return 0;
         }
 
-        public void Statistic()
-        {
-            Menux.MW.GetStringData("revenue", ref sum_rev);
-            Menux.MW.GetStringData("expenditure", ref sum_exp);
-            balance = sum_rev - sum_exp;
+        public DataType InitTextbox_ChangeForm(string time)
+        { 
+            for (int i = 0; i < data.Count; i++)
+                {
+                    if (data[i].time == time)
+                        return data[i];
+                }
+
+            return null;
         }
-       
+
+        public void UpdateData(DataType tmp)
+        {
+            for (int i = 0; i < data.Count; i++)
+            {
+                if (data[i].time == tmp.time)
+                {
+                    data[i].describe = tmp.describe;
+                    data[i].unit = tmp.unit;
+                    data[i].money = tmp.money;
+
+                    return;
+                }
+            }
+        }
+
+        public void DeleteRow(string time)
+        {
+            for (int i = 0; i < data.Count; i++)
+                if (data[i].time == time)
+                {
+                    data.Remove(data[i]);
+                    return;
+                }
+        }
     }
 
 

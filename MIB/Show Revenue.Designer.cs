@@ -34,12 +34,14 @@
             this.label2 = new System.Windows.Forms.Label();
             this.lb_date = new System.Windows.Forms.Label();
             this.dataGridView = new System.Windows.Forms.DataGridView();
+            this.btn_change = new System.Windows.Forms.Button();
+            this.btn_delete = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
             this.SuspendLayout();
             // 
             // btn_back
             // 
-            this.btn_back.Location = new System.Drawing.Point(310, 274);
+            this.btn_back.Location = new System.Drawing.Point(310, 276);
             this.btn_back.Name = "btn_back";
             this.btn_back.Size = new System.Drawing.Size(78, 38);
             this.btn_back.TabIndex = 1;
@@ -86,22 +88,47 @@
             // 
             // dataGridView
             // 
+            this.dataGridView.AllowUserToAddRows = false;
             this.dataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells;
-            this.dataGridView.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllHeaders;
+            this.dataGridView.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCellsExceptHeaders;
             this.dataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView.Location = new System.Drawing.Point(15, 39);
+            this.dataGridView.Location = new System.Drawing.Point(15, 38);
             this.dataGridView.MultiSelect = false;
             this.dataGridView.Name = "dataGridView";
             this.dataGridView.ReadOnly = true;
+            this.dataGridView.RowHeadersVisible = false;
             this.dataGridView.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
-            this.dataGridView.Size = new System.Drawing.Size(373, 225);
+            this.dataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridView.Size = new System.Drawing.Size(373, 204);
             this.dataGridView.TabIndex = 10;
+            // 
+            // btn_change
+            // 
+            this.btn_change.Location = new System.Drawing.Point(12, 248);
+            this.btn_change.Name = "btn_change";
+            this.btn_change.Size = new System.Drawing.Size(66, 26);
+            this.btn_change.TabIndex = 12;
+            this.btn_change.Text = "Change";
+            this.btn_change.UseVisualStyleBackColor = true;
+            this.btn_change.Click += new System.EventHandler(this.btn_change_Click);
+            // 
+            // btn_delete
+            // 
+            this.btn_delete.Location = new System.Drawing.Point(84, 248);
+            this.btn_delete.Name = "btn_delete";
+            this.btn_delete.Size = new System.Drawing.Size(66, 26);
+            this.btn_delete.TabIndex = 13;
+            this.btn_delete.Text = "Delete";
+            this.btn_delete.UseVisualStyleBackColor = true;
+            this.btn_delete.Click += new System.EventHandler(this.btn_delete_Click);
             // 
             // Show_Revenue
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(400, 331);
+            this.Controls.Add(this.btn_delete);
+            this.Controls.Add(this.btn_change);
             this.Controls.Add(this.dataGridView);
             this.Controls.Add(this.lb_date);
             this.Controls.Add(this.label2);
@@ -125,5 +152,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label lb_date;
         private System.Windows.Forms.DataGridView dataGridView;
+        private System.Windows.Forms.Button btn_change;
+        private System.Windows.Forms.Button btn_delete;
     }
 }

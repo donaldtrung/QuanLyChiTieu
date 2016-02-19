@@ -23,7 +23,7 @@ namespace MIB
             InitCombobox();
             this.ControlBox = false;
 
-            MW.Read(MW.data, MW.file_input);
+            MW.Read(MW.file_input);
         }
 
         private void btn_addrevenue_Click(object sender, EventArgs e)
