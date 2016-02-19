@@ -17,7 +17,7 @@ namespace Project.Test
         public void SetUp()
         {
             startupPath = System.AppDomain.CurrentDomain.BaseDirectory + TestWallet.file_input;
-            TestWallet.Read(TestWallet.data, startupPath);
+            TestWallet.Read(startupPath);
         }
         [Test]
         public void Add5_thousand_VND_Expenditure()

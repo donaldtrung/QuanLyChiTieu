@@ -21,7 +21,7 @@ namespace Project.Test
         public void SetUp()
         {
             startupPath = System.AppDomain.CurrentDomain.BaseDirectory + TestWallet.file_input;
-            TestWallet.Read(TestWallet.data, startupPath);
+            TestWallet.Read(startupPath);
             TestWallet.date.month = "02";
             TestWallet.date.year = "2016";
             sumrev = 0.0;

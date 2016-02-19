@@ -26,6 +26,7 @@ namespace MIB
     }
     public class MyWallet
     {
+        public double sum_rev = 0.0, sum_exp = 0.0, balance;
         public string file_input = "data.xml";
         public Date date = new Date();
         public List<DataType> data = new List<DataType>();
@@ -140,6 +141,13 @@ namespace MIB
             }
 
             return t;
+        }
+
+        public void Statistic()
+        {
+            GetStringData("revenue", ref sum_rev);
+            GetStringData("expenditure", ref sum_exp);
+            balance = sum_rev - sum_exp;
         }
         private double CalMoney(string type_money, double money)
         {

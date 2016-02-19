@@ -18,7 +18,7 @@ namespace Project.Test
         public void SetUp()
         {
             startupPath = System.AppDomain.CurrentDomain.BaseDirectory + TestWallet.file_input;
-            TestWallet.Read(TestWallet.data, startupPath);
+            TestWallet.Read(startupPath);
         }
 
         [Test]
@@ -35,7 +35,7 @@ namespace Project.Test
         {
             try
             {
-                TestWallet.Read(TestWallet.data, startupPath);
+                TestWallet.Read(startupPath);
             }
             catch
             {
@@ -49,9 +49,9 @@ namespace Project.Test
         {
             List<MIB.DataType> tmpData = new List<MIB.DataType>();
             tmpData = TestWallet.data;
-            TestWallet.Write(TestWallet.data, startupPath);
+            TestWallet.Write(startupPath);
             TestWallet.data.Clear();
-            TestWallet.Read(TestWallet.data, startupPath);
+            TestWallet.Read(startupPath);
             Assert.AreEqual(tmpData, TestWallet.data);
         }
     }
