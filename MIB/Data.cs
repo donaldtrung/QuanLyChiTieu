@@ -105,7 +105,7 @@ namespace MIB
         
             tb.Columns.Add("Time", typeof(string));
             tb.Columns.Add("Money", typeof(string));
-            tb.Columns.Add("Describe", typeof(string));
+            tb.Columns.Add("Description", typeof(string));
             //string text = null;
             for (int i = data.Count(); i > 0; i--)
              {
@@ -117,7 +117,7 @@ namespace MIB
                      newRow["Time"] = data[i - 1].time; // remove this line
                      money = CalMoney(data[i - 1].unit, double.Parse(data[i - 1].money));
                      newRow["Money"] = ConvertMoney(money) + " VNĐ";
-                     newRow["Describe"] = data[i - 1].describe;
+                     newRow["Description"] = data[i - 1].describe;
                      tb.Rows.Add(newRow);
 
                      sum += money;
