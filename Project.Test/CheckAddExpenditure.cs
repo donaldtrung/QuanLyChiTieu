@@ -10,12 +10,13 @@ namespace Project.Test
     [TestFixture]
     class CheckAddExpenditure
     {
-        public MIB.MyWallet TestWallet = new MIB.MyWallet();
+        public MIB.MyWallet TestWallet;
         string startupPath = "";
 
         [SetUp]
         public void SetUp()
         {
+            TestWallet = new MIB.MyWallet();
             startupPath = System.AppDomain.CurrentDomain.BaseDirectory + TestWallet.file_input;
             TestWallet.Read(startupPath);
         }

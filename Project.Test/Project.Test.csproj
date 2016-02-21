@@ -50,6 +50,7 @@
     <Compile Include="CheckAddRevenue.cs" />
     <Compile Include="Class1.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TestChangeData.cs" />
     <Compile Include="TestDeafault.cs" />
     <Compile Include="TestSum_Revenue_Expenditure.cs" />
     <Compile Include="Test_I_O_xml_File.cs" />

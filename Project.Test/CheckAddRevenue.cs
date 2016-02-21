@@ -10,11 +10,12 @@ namespace Project.Test
     [TestFixture]
     public class CheckAddRevenue
     {
-        public MIB.MyWallet TestWallet = new MIB.MyWallet();
+        public MIB.MyWallet TestWallet;
 
         [SetUp]
         public void SetUp()
         {
+            TestWallet = new MIB.MyWallet();
             string startupPath = System.AppDomain.CurrentDomain.BaseDirectory + TestWallet.file_input;
             TestWallet.Read(startupPath);
         }
@@ -80,7 +81,7 @@ namespace Project.Test
                 tmpData.date.month = "0" + DateTime.Now.Month.ToString();
             tmpData.time = DateTime.Now.ToString("dd/MM/yyyy HH:mm:ss");
             tmpData.money = "50";
-            tmpData.unit = "milion thousand VND";
+            tmpData.unit = "hundred thousand VND";
             tmpData.describe = "bán gỗ hương";
             TestWallet.Add(tmpData);
             Assert.AreEqual(tmpData, TestWallet.data[TestWallet.data.Count() - 1]);

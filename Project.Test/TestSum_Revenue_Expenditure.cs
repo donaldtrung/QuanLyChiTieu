@@ -13,13 +13,14 @@ namespace Project.Test
     [TestFixture]
     class TestSum_Revenue_Expenditure
     {
-        public MIB.MyWallet TestWallet = new MIB.MyWallet();
+        public MIB.MyWallet TestWallet;
         string startupPath = "";
         double sumrev;
         double sumex;
         [SetUp]
         public void SetUp()
         {
+            TestWallet = new MIB.MyWallet();
             startupPath = System.AppDomain.CurrentDomain.BaseDirectory + TestWallet.file_input;
             TestWallet.Read(startupPath);
             TestWallet.date.month = "02";
@@ -47,7 +48,7 @@ namespace Project.Test
                         case "hundred thousand VND":
                             tmp *= 100000;
                             break;
-                        case "milion VND":
+                        case "million VND":
                             tmp *= 1000000;
                             break;
                         case "billion VND":
@@ -82,7 +83,7 @@ namespace Project.Test
                         case "hundred thousand VND":
                             tmp *= 100000;
                             break;
-                        case "milion VND":
+                        case "million VND":
                             tmp *= 1000000;
                             break;
                         case "billion VND":
@@ -102,6 +103,10 @@ namespace Project.Test
         [Test]
         public void TestCalBalance()
         {
+            double sumrev = 0.0;
+            double sumex = 0.0;
+            TestWallet.GetStringData("revenue", ref sumrev);
+            TestWallet.GetStringData("expenditure", ref sumex);
             double balance = sumrev - sumex;
             double realBalan = 0.0;
             TestWallet.Statistic();
