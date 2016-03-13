@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets = "Build"
+    xmlns="http://schemas.microsoft.com/developer/msbuild/2003" >
+
+  <PropertyGroup>
+    <Debug Condition="'$(Delete)'==''">true</Debug>
+  </PropertyGroup>
+  <ItemGroup>
+    <CompileFiles Include="MIB.cs" />
+    <DeleteFiles Include="MIB.exe;MIB.pdb" />
+  </ItemGroup>
+  <Target Name="Clean">
+    <Delete Files="@(DeleteFiles)" />
+  </Target>
+  <Target Name="Build" DependsOnTargets="Clean">
+    <Csc Sources="@(CompileFiles)"
+    OutputAssembly="MIB.exe"
+         EmitDebugInformation="$(Debug)" />
+  </Target>
+</Project>
