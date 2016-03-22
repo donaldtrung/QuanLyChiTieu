@@ -44,7 +44,7 @@
             this.btn_back.Location = new System.Drawing.Point(309, 275);
             this.btn_back.Name = "btn_back";
             this.btn_back.Size = new System.Drawing.Size(78, 38);
-            this.btn_back.TabIndex = 1;
+            this.btn_back.TabIndex = 4;
             this.btn_back.Text = "Back";
             this.btn_back.UseVisualStyleBackColor = true;
             this.btn_back.Click += new System.EventHandler(this.btn_back_Click);
@@ -55,7 +55,7 @@
             this.tb_sum.Location = new System.Drawing.Point(58, 286);
             this.tb_sum.Name = "tb_sum";
             this.tb_sum.Size = new System.Drawing.Size(184, 20);
-            this.tb_sum.TabIndex = 5;
+            this.tb_sum.TabIndex = 3;
             this.tb_sum.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // label1
@@ -90,7 +90,7 @@
             this.dataGridView.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
             this.dataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView.Size = new System.Drawing.Size(373, 204);
-            this.dataGridView.TabIndex = 11;
+            this.dataGridView.TabIndex = 0;
             // 
             // lb_date
             // 
@@ -107,7 +107,7 @@
             this.btn_delete.Location = new System.Drawing.Point(84, 246);
             this.btn_delete.Name = "btn_delete";
             this.btn_delete.Size = new System.Drawing.Size(66, 26);
-            this.btn_delete.TabIndex = 14;
+            this.btn_delete.TabIndex = 2;
             this.btn_delete.Text = "Delete";
             this.btn_delete.UseVisualStyleBackColor = true;
             this.btn_delete.Click += new System.EventHandler(this.btn_delete_Click);
@@ -117,7 +117,7 @@
             this.btn_change.Location = new System.Drawing.Point(12, 246);
             this.btn_change.Name = "btn_change";
             this.btn_change.Size = new System.Drawing.Size(66, 26);
-            this.btn_change.TabIndex = 15;
+            this.btn_change.TabIndex = 1;
             this.btn_change.Text = "Change";
             this.btn_change.UseVisualStyleBackColor = true;
             this.btn_change.Click += new System.EventHandler(this.btn_change_Click);

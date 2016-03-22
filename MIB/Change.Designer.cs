@@ -45,14 +45,15 @@
             this.cbb_unit.Location = new System.Drawing.Point(242, 56);
             this.cbb_unit.Name = "cbb_unit";
             this.cbb_unit.Size = new System.Drawing.Size(141, 21);
-            this.cbb_unit.TabIndex = 0;
+            this.cbb_unit.TabIndex = 1;
+            this.cbb_unit.Enter += new System.EventHandler(this.cbb_unit_Enter);
             // 
             // tb_money
             // 
             this.tb_money.Location = new System.Drawing.Point(93, 56);
             this.tb_money.Name = "tb_money";
             this.tb_money.Size = new System.Drawing.Size(143, 20);
-            this.tb_money.TabIndex = 1;
+            this.tb_money.TabIndex = 0;
             this.tb_money.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.tb_money.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tb_money_KeyPress);
             // 
@@ -70,7 +71,7 @@
             this.btn_cancel.Location = new System.Drawing.Point(309, 211);
             this.btn_cancel.Name = "btn_cancel";
             this.btn_cancel.Size = new System.Drawing.Size(76, 34);
-            this.btn_cancel.TabIndex = 3;
+            this.btn_cancel.TabIndex = 4;
             this.btn_cancel.Text = "Cancel";
             this.btn_cancel.UseVisualStyleBackColor = true;
             this.btn_cancel.Click += new System.EventHandler(this.btn_cancel_Click);
@@ -80,7 +81,7 @@
             this.btn_save.Location = new System.Drawing.Point(227, 211);
             this.btn_save.Name = "btn_save";
             this.btn_save.Size = new System.Drawing.Size(76, 34);
-            this.btn_save.TabIndex = 4;
+            this.btn_save.TabIndex = 3;
             this.btn_save.Text = "Save";
             this.btn_save.UseVisualStyleBackColor = true;
             this.btn_save.Click += new System.EventHandler(this.btn_save_Click);
