@@ -86,7 +86,7 @@
             this.btn_exit.Location = new System.Drawing.Point(213, 255);
             this.btn_exit.Name = "btn_exit";
             this.btn_exit.Size = new System.Drawing.Size(139, 47);
-            this.btn_exit.TabIndex = 4;
+            this.btn_exit.TabIndex = 5;
             this.btn_exit.Text = "Exit";
             this.btn_exit.UseVisualStyleBackColor = true;
             this.btn_exit.Click += new System.EventHandler(this.btn_exit_Click);
@@ -110,6 +110,7 @@
             this.cbb_month.Size = new System.Drawing.Size(56, 21);
             this.cbb_month.TabIndex = 6;
             this.cbb_month.TextChanged += new System.EventHandler(this.cbb_month_TextChanged);
+            this.cbb_month.Enter += new System.EventHandler(this.cbb_month_Enter);
             // 
             // cbb_year
             // 
@@ -120,6 +121,7 @@
             this.cbb_year.Size = new System.Drawing.Size(77, 21);
             this.cbb_year.TabIndex = 7;
             this.cbb_year.TextChanged += new System.EventHandler(this.cbb_year_TextChanged);
+            this.cbb_year.Enter += new System.EventHandler(this.cbb_year_Enter);
             // 
             // label2
             // 
@@ -144,7 +146,7 @@
             this.btn_statistics.Location = new System.Drawing.Point(59, 255);
             this.btn_statistics.Name = "btn_statistics";
             this.btn_statistics.Size = new System.Drawing.Size(139, 47);
-            this.btn_statistics.TabIndex = 10;
+            this.btn_statistics.TabIndex = 4;
             this.btn_statistics.Text = "Statistics";
             this.btn_statistics.UseVisualStyleBackColor = true;
             this.btn_statistics.Click += new System.EventHandler(this.btn_statistics_Click);

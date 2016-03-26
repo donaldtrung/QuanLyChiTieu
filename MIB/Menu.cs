@@ -111,6 +111,16 @@ namespace MIB
 
             this.Hide();
         }
+
+        private void cbb_month_Enter(object sender, EventArgs e)
+        {
+            cbb_month.DroppedDown = true;
+        }
+
+        private void cbb_year_Enter(object sender, EventArgs e)
+        {
+            cbb_year.DroppedDown = true;
+        }
         
     }
 }

@@ -90,5 +90,10 @@ namespace MIB
                 e.Handled = true;
             }
         }
+
+        private void cbb_unit_Enter(object sender, EventArgs e)
+        {
+            cbb_unit.DroppedDown = true;
+        }
     }
 }

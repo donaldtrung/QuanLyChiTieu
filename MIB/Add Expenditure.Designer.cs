@@ -42,7 +42,7 @@
             this.btn_add.Location = new System.Drawing.Point(207, 280);
             this.btn_add.Name = "btn_add";
             this.btn_add.Size = new System.Drawing.Size(90, 39);
-            this.btn_add.TabIndex = 0;
+            this.btn_add.TabIndex = 3;
             this.btn_add.Text = "Add";
             this.btn_add.UseVisualStyleBackColor = true;
             this.btn_add.Click += new System.EventHandler(this.btn_add_Click);
@@ -52,7 +52,7 @@
             this.btn_back.Location = new System.Drawing.Point(303, 280);
             this.btn_back.Name = "btn_back";
             this.btn_back.Size = new System.Drawing.Size(87, 39);
-            this.btn_back.TabIndex = 1;
+            this.btn_back.TabIndex = 4;
             this.btn_back.Text = "Back";
             this.btn_back.UseVisualStyleBackColor = true;
             this.btn_back.Click += new System.EventHandler(this.btn_back_Click);
@@ -81,7 +81,7 @@
             this.tb_money.Location = new System.Drawing.Point(77, 53);
             this.tb_money.Name = "tb_money";
             this.tb_money.Size = new System.Drawing.Size(156, 20);
-            this.tb_money.TabIndex = 4;
+            this.tb_money.TabIndex = 0;
             this.tb_money.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.tb_money.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tb_money_KeyPress);
             // 
@@ -92,7 +92,7 @@
             this.tb_describe.Name = "tb_describe";
             this.tb_describe.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.tb_describe.Size = new System.Drawing.Size(269, 148);
-            this.tb_describe.TabIndex = 5;
+            this.tb_describe.TabIndex = 2;
             // 
             // cbb_unit
             // 
@@ -104,7 +104,8 @@
             this.cbb_unit.Location = new System.Drawing.Point(239, 52);
             this.cbb_unit.Name = "cbb_unit";
             this.cbb_unit.Size = new System.Drawing.Size(151, 21);
-            this.cbb_unit.TabIndex = 6;
+            this.cbb_unit.TabIndex = 1;
+            this.cbb_unit.Enter += new System.EventHandler(this.cbb_unit_Enter);
             // 
             // Add_Expenditure
             // 

@@ -48,7 +48,7 @@
             this.btn_back.Location = new System.Drawing.Point(310, 276);
             this.btn_back.Name = "btn_back";
             this.btn_back.Size = new System.Drawing.Size(78, 38);
-            this.btn_back.TabIndex = 1;
+            this.btn_back.TabIndex = 3;
             this.btn_back.Text = "Back";
             this.btn_back.UseVisualStyleBackColor = true;
             this.btn_back.Click += new System.EventHandler(this.btn_back_Click);
@@ -124,7 +124,7 @@
             this.dataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView.ShowCellErrors = false;
             this.dataGridView.Size = new System.Drawing.Size(373, 204);
-            this.dataGridView.TabIndex = 10;
+            this.dataGridView.TabIndex = 0;
             this.dataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_CellContentClick);
             // 
             // btn_change
@@ -132,7 +132,7 @@
             this.btn_change.Location = new System.Drawing.Point(12, 248);
             this.btn_change.Name = "btn_change";
             this.btn_change.Size = new System.Drawing.Size(66, 26);
-            this.btn_change.TabIndex = 12;
+            this.btn_change.TabIndex = 1;
             this.btn_change.Text = "Change";
             this.btn_change.UseVisualStyleBackColor = true;
             this.btn_change.Click += new System.EventHandler(this.btn_change_Click);
@@ -142,7 +142,7 @@
             this.btn_delete.Location = new System.Drawing.Point(84, 248);
             this.btn_delete.Name = "btn_delete";
             this.btn_delete.Size = new System.Drawing.Size(66, 26);
-            this.btn_delete.TabIndex = 13;
+            this.btn_delete.TabIndex = 2;
             this.btn_delete.Text = "Delete";
             this.btn_delete.UseVisualStyleBackColor = true;
             this.btn_delete.Click += new System.EventHandler(this.btn_delete_Click);

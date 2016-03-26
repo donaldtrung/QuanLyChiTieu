@@ -53,14 +53,14 @@
             this.tb_describe.Name = "tb_describe";
             this.tb_describe.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.tb_describe.Size = new System.Drawing.Size(269, 148);
-            this.tb_describe.TabIndex = 1;
+            this.tb_describe.TabIndex = 2;
             // 
             // btn_add
             // 
             this.btn_add.Location = new System.Drawing.Point(207, 280);
             this.btn_add.Name = "btn_add";
             this.btn_add.Size = new System.Drawing.Size(90, 39);
-            this.btn_add.TabIndex = 2;
+            this.btn_add.TabIndex = 3;
             this.btn_add.Text = "Add";
             this.btn_add.UseVisualStyleBackColor = true;
             this.btn_add.Click += new System.EventHandler(this.btn_add_Click);
@@ -70,7 +70,7 @@
             this.btn_back.Location = new System.Drawing.Point(303, 280);
             this.btn_back.Name = "btn_back";
             this.btn_back.Size = new System.Drawing.Size(87, 39);
-            this.btn_back.TabIndex = 3;
+            this.btn_back.TabIndex = 4;
             this.btn_back.Text = "Back";
             this.btn_back.UseVisualStyleBackColor = true;
             this.btn_back.Click += new System.EventHandler(this.btn_back_Click);
@@ -82,7 +82,8 @@
             this.cbb_unit.Location = new System.Drawing.Point(241, 52);
             this.cbb_unit.Name = "cbb_unit";
             this.cbb_unit.Size = new System.Drawing.Size(149, 21);
-            this.cbb_unit.TabIndex = 4;
+            this.cbb_unit.TabIndex = 1;
+            this.cbb_unit.Enter += new System.EventHandler(this.cbb_unit_Enter);
             // 
             // label1
             // 

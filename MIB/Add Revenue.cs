@@ -105,5 +105,10 @@ namespace MIB
 
             return false;
         }
+
+        private void cbb_unit_Enter(object sender, EventArgs e)
+        {
+            cbb_unit.DroppedDown = true;
+        }
     }
 }
