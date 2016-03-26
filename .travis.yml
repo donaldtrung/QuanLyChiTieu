@@ -1,8 +1,11 @@
 language: csharp
 solution: MIB.sln
 notifications:
-  -email:
-  -andinh1995@yahoo.com.vn
+  email:
+    recipients:
+      - andinh1995@yahoo.com.vn
+    on_success: [always|never|change] # default: change
+    on_failure: [always|never|change] # default: always
 install:
   - nuget restore MIB.sln
   - nuget install NUnit.Runners -Version 2.6.4 -OutputDirectory testrunner
