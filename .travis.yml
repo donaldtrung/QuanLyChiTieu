@@ -4,6 +4,8 @@ notifications:
   email:
     recipients:
       - andinh1995@yahoo.com.vn
+      - levansang026@gmail.com
+      - nhtrung13clc@gmail.com
     on_success: always
     on_failure: always
 install:
