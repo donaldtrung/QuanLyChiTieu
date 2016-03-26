@@ -120,7 +120,7 @@ namespace MIB
                      newRow["Description"] = data[i - 1].describe;
                      tb.Rows.Add(newRow);
 
-                     sum += money;
+                     sum -= money;
                  }
                  //{
                  //    text = text + data[i - 1].time + "\r\n" + data[i - 1].money + " " + data[i - 1].unit + "\r\n" + data[i - 1].describe + "\r\n\r\n";
