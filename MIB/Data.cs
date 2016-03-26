@@ -147,7 +147,7 @@ namespace MIB
         {
             GetStringData("revenue", ref sum_rev);
             GetStringData("expenditure", ref sum_exp);
-            balance = sum_rev + sum_exp;
+            balance = sum_rev - sum_exp;
         }
         private double CalMoney(string type_money, double money)
         {
