@@ -8,4 +8,4 @@ script:
   - mono ./testrunner/NUnit.Runners.2.6.4/tools/nunit-console.exe ./Project.Test/bin/Release/Project.Test.dll
   notifications:
   email:
-    - andinh1995@yahoo.com.vn
+    andinh1995@yahoo.com.vn
