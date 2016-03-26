@@ -33,7 +33,7 @@ namespace Project.Test
             tmpData.unit = "thousand VND";
             tmpData.describe = "cafee";
             TestWallet.Add(tmpData);
-            Assert.AreEqual(tmpData, TestWallet.data[TestWallet.data.Count() ]);
+            Assert.AreEqual(tmpData, TestWallet.data[TestWallet.data.Count() -1]);
         }
 
         [Test]
