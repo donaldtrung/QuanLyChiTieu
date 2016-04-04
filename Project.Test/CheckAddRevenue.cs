@@ -87,21 +87,6 @@ namespace Project.Test
             Assert.AreEqual(tmpData, TestWallet.data[TestWallet.data.Count() - 1]);
         }
 
-        [Test]
-        public void Add6_Bilion_VNDRevenue()
-        {
-            MIB.DataType tmpData = new MIB.DataType();
-            tmpData.type = "revenue";
-            if (DateTime.Now.Month >= 10)
-                tmpData.date.month = DateTime.Now.Month.ToString();
-            else
-                tmpData.date.month = "0" + DateTime.Now.Month.ToString();
-            tmpData.time = DateTime.Now.ToString("dd/MM/yyyy HH:mm:ss");
-            tmpData.money = "6";
-            tmpData.unit = "bilion thousand VND";
-            tmpData.describe = "bán nhà nguyễn kim";
-            TestWallet.Add(tmpData);
-            Assert.AreEqual(tmpData, TestWallet.data[TestWallet.data.Count() - 1]);
-        }
+
     }
 }
